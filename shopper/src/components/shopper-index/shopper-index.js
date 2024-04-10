@@ -3,13 +3,15 @@ import {BrowserRouter,Routes, Route,Link} from 'react-router-dom' ;
 import { ShopperHome } from "../shopper-home/shopper-home";
 import { ShopperCategory } from "../shopper-category/shopper-category";
 import  ShopperDetails  from "../shopper-details/shopper-details";
+import { ShopperRegister } from "./shopper-register/shopper-register";
 
 
 export function ShopperIndex()
 {
     return(
+        <BrowserRouter>
         <div className="container-fluid">
-            <BrowserRouter>
+           
             <header className="d-flex p-2  justify-content-between">
             <div>
                 <h2>Shopper.</h2>
@@ -23,7 +25,7 @@ export function ShopperIndex()
             </nav>
             <div>
                 <span className="bi bi-search me-3"></span>
-                <span className="bi bi-person me-3"></span>
+                <Link to="register" className="link"><span className="bi bi-person me-3"></span></Link>
                 <span className="bi bi-heart me-3"></span>
                 <span className="bi bi-cart4 me-3"></span>
             </div>
@@ -41,10 +43,12 @@ export function ShopperIndex()
                    <Route path="electonics" element={<ShopperCategory/>}/> */}
                    <Route path="/category/:catname" element={<ShopperCategory/>}/>
                    <Route path="details/:id" element={<ShopperDetails/>}/>
+                   <Route path="register" element ={<ShopperRegister />} />
                    
                </Routes>
             </div>
-            </BrowserRouter>
+            
         </div>
+        </BrowserRouter>
     )
 }
