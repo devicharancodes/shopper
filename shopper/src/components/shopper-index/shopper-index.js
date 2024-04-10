@@ -28,7 +28,7 @@ export function ShopperIndex()
                 <span className="bi bi-cart4 me-3"></span>
             </div>
             </header>
-            <div className="bg-dark text-white text-center p-1 mt-2">cd
+            <div className="bg-dark text-white text-center p-1 mt-2">
                 <p>⚡️ HAPPY HOLIDAY DEALS ON EVERYTHING ⚡️</p>
             </div>
             <div className="mt-3">

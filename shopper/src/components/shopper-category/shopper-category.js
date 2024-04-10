@@ -21,7 +21,7 @@ export function ShopperCategory()
                      products.map(product =>
                     
                             <div className='card m-2 p-2 ' style={{width:'300px'}}>
-                                <img src={product.image} height='200px' className='card-img-top'/>
+                                <img src={product.image}  alt =" " height='200px' className='card-img-top'/>
                                 <div className='card-header'><p>{product.title}</p></div>
                                 <div className='card-footer'><Link to={`/details/${product.id} `} className='btn btn-primary w-100'>Details</Link></div>
                             </div>
@@ -30,4 +30,4 @@ export function ShopperCategory()
             </div>
         </div>
     )
-}ö
+}
