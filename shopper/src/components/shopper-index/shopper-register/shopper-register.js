@@ -1,11 +1,12 @@
 import {ErrorMessage, Field, Formik, Form} from "formik";
 import * as yup from "yup";
 import axios from "axios";
-
-
+import {useNavigate} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export function ShopperRegister()
 {
+    const navigate = useNavigate();
     return(
         <div className="container-fluid">
             <h3>Register User</h3>
@@ -30,7 +31,10 @@ export function ShopperRegister()
 
              onSubmit={
                 (values)=>{ 
-                    axios.post("http://127.0.0.1:5000/register", values).then(()=>alert("Register Successfully...."));
+                    axios.post("http://127.0.0.1:5000/register", values).then(()=>{
+                        alert("Register Successfully....");
+                              navigate("/login");
+                    })
                     // .catch((error) => {
                     //     console.error("Registration Error:", error);
                     //     // Handle error
@@ -58,6 +62,7 @@ export function ShopperRegister()
                         <dd className="text-danger"><ErrorMessage name="mobile"/></dd>
                     </dl>
                     <button type="submit" className="btn btn-primary">Register</button>
+                    <div><span>Existing User please </span><Link to="/login" > Login</Link></div>
                 </Form>
                 }
 

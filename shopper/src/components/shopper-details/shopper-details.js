@@ -9,7 +9,7 @@ export function ShopperDetails(){
     useEffect(()=>{
         axios.get(`https://fakestoreapi.com/products/${params.id}`).then(responce => setProducts(responce.data))
     }
-    ,[])
+    ,[params.id])
 
     return(
         <div className="container-fluid">

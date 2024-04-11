@@ -4,14 +4,17 @@ import { ShopperHome } from "../shopper-home/shopper-home";
 import { ShopperCategory } from "../shopper-category/shopper-category";
 import  ShopperDetails  from "../shopper-details/shopper-details";
 import { ShopperRegister } from "./shopper-register/shopper-register";
+import {ShopperLogin} from "../shopper-login/shopper-login";
+import { ShopperInvalid } from "../shopper-invalid/shopper-invalid";
+
 
 
 export function ShopperIndex()
 {
     return(
-        <BrowserRouter>
+        
         <div className="container-fluid">
-           
+           <BrowserRouter>
             <header className="d-flex p-2  justify-content-between">
             <div>
                 <h2>Shopper.</h2>
@@ -44,11 +47,13 @@ export function ShopperIndex()
                    <Route path="/category/:catname" element={<ShopperCategory/>}/>
                    <Route path="details/:id" element={<ShopperDetails/>}/>
                    <Route path="register" element ={<ShopperRegister />} />
+                   <Route path="login" element={<ShopperLogin/>}/>
+                   <Route path="/invalid" element={<ShopperInvalid/>} />
                    
                </Routes>
             </div>
-            
+            </BrowserRouter>
         </div>
-        </BrowserRouter>
+        
     )
 }
